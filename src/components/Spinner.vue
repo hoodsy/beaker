@@ -26,13 +26,14 @@
             dur="1.2s"
             repeatCount="indefinite"
           ></animate>
-          <animate
-            attributeName="height"
-            values="40; 32; 40"
+          <animateTransform
+            attributeName="transform"
+            type="scale"
+            values="1 1; 1 0.8; 1 1"
             begin="0s"
             dur="1.2s"
             repeatCount="indefinite"
-          ></animate>
+          ></animateTransform>
           <animateMotion begin="0s" dur="1.2s" repeatCount="indefinite">
             <mpath xlink:href="#s-bar-y-path"></mpath>
           </animateMotion>
@@ -55,13 +56,14 @@
             dur="1.2s"
             repeatCount="indefinite"
           ></animate>
-          <animate
-            attributeName="height"
-            values="40; 32; 40"
+          <animateTransform
+            attributeName="transform"
+            type="scale"
+            values="1 1; 1 0.8; 1 1"
             begin="0.4s"
             dur="1.2s"
             repeatCount="indefinite"
-          ></animate>
+          ></animateTransform>
           <animateMotion begin="0.4s" dur="1.2s" repeatCount="indefinite">
             <mpath xlink:href="#s-bar-y-path"></mpath>
           </animateMotion>
@@ -84,13 +86,14 @@
             dur="1.2s"
             repeatCount="indefinite"
           ></animate>
-          <animate
-            attributeName="height"
-            values="40; 32; 40"
+          <animateTransform
+            attributeName="transform"
+            type="scale"
+            values="1 1; 1 0.8; 1 1"
             begin="0.8s"
             dur="1.2s"
             repeatCount="indefinite"
-          ></animate>
+          ></animateTransform>
           <animateMotion begin="0.8s" dur="1.2s" repeatCount="indefinite">
             <mpath xlink:href="#s-bar-y-path"></mpath>
           </animateMotion>
