@@ -19,24 +19,6 @@
           class="s-spinner__bar"
           :class="swapMode"
         >
-          <animate
-            attributeName="opacity"
-            values=".24; .08; .24"
-            begin="0s"
-            dur="1.2s"
-            repeatCount="indefinite"
-          ></animate>
-          <animateTransform
-            attributeName="transform"
-            type="scale"
-            values="1 1; 1 0.8; 1 1"
-            begin="0s"
-            dur="1.2s"
-            repeatCount="indefinite"
-          ></animateTransform>
-          <animateMotion begin="0s" dur="1.2s" repeatCount="indefinite">
-            <mpath xlink:href="#s-bar-y-path"></mpath>
-          </animateMotion>
         </rect>
         <rect
           width="4"
@@ -45,28 +27,9 @@
           y="0"
           ry="2"
           rx="2"
-          class="s-spinner__bar"
+          class="s-spinner__bar middle"
           :class="swapMode"
         >
-          <animate attributeName="opacity" values=".24; .24; .24" begin="0s" dur="0.4s"></animate>
-          <animate
-            attributeName="opacity"
-            values=".24; .08; .24"
-            begin="0.4s"
-            dur="1.2s"
-            repeatCount="indefinite"
-          ></animate>
-          <animateTransform
-            attributeName="transform"
-            type="scale"
-            values="1 1; 1 0.8; 1 1"
-            begin="0.4s"
-            dur="1.2s"
-            repeatCount="indefinite"
-          ></animateTransform>
-          <animateMotion begin="0.4s" dur="1.2s" repeatCount="indefinite">
-            <mpath xlink:href="#s-bar-y-path"></mpath>
-          </animateMotion>
         </rect>
         <rect
           width="4"
@@ -75,28 +38,9 @@
           y="0"
           ry="2"
           rx="2"
-          class="s-spinner__bar"
+          class="s-spinner__bar last"
           :class="swapMode"
         >
-          <animate attributeName="opacity" values=".24; .24; .24" begin="0s" dur="0.8s"></animate>
-          <animate
-            attributeName="opacity"
-            values=".24; .08; .24"
-            begin="0.8s"
-            dur="1.2s"
-            repeatCount="indefinite"
-          ></animate>
-          <animateTransform
-            attributeName="transform"
-            type="scale"
-            values="1 1; 1 0.8; 1 1"
-            begin="0.8s"
-            dur="1.2s"
-            repeatCount="indefinite"
-          ></animateTransform>
-          <animateMotion begin="0.8s" dur="1.2s" repeatCount="indefinite">
-            <mpath xlink:href="#s-bar-y-path"></mpath>
-          </animateMotion>
         </rect>
       </svg>
     </div>
@@ -156,9 +100,22 @@ export default class Spinner extends Vue {
 
 .s-spinner__bar {
   fill: @dark-2;
+  opacity: 0.24;
+
+  animation-name: breathe;
+  animation-duration: 0.6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 
   &.s-spinner--modeswap {
     fill: @light-2;
+  }
+
+  &.middle {
+    animation-delay: 0.4s;
+  }
+  &.last {
+    animation-delay: 0.8s;
   }
 }
 
@@ -170,6 +127,17 @@ export default class Spinner extends Vue {
     &.s-spinner--modeswap {
       fill: @dark-2;
     }
+  }
+}
+
+@keyframes breathe {
+  from {
+    opacity: 0.24;
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0.08;
+    transform: scale3d(1, 0.8, 1) translate3d(0, 4px, 0);
   }
 }
 </style>
