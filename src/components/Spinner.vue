@@ -106,6 +106,8 @@ export default class Spinner extends Vue {
   animation-duration: 0.6s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  animation-delay: 0s;
+  animation-timing-function: linear;
 
   &.s-spinner--modeswap {
     fill: @light-2;
